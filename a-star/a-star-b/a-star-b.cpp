@@ -77,11 +77,7 @@ bool AStarB::isSolved(int** b) const
 {
     for (int i=0; i<SIZE; i++) {
         for (int j=0; j<SIZE; j++) {
-            if (i+1 == SIZE && j+1 == SIZE) {
-                if (b[i][j] != 0) {
-                    return false;
-                }
-            } else if (b[i][j] != (i * SIZE + j) + 1) {
+            if (b[i][j] != goal[i][j]) {
                 return false;
             }
         }
@@ -126,7 +122,18 @@ string AStarB::boardToString(int **b)
     return s;
 }
 
-void AStarB::printBoard(int **b) const
+void AStarB::printBoard(int **b)
+{
+    for (int i=0; i<SIZE; i++) {
+        for (int j=0; j<SIZE; j++) {
+            printf("%d ", b[i][j]);
+        }
+        
+        printf("\n");
+    }
+}
+
+void AStarB::printBoard(int b[SIZE][SIZE])
 {
     for (int i=0; i<SIZE; i++) {
         for (int j=0; j<SIZE; j++) {

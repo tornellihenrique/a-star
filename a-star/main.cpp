@@ -36,8 +36,9 @@ int main(int argc, const char * argv[]) {
     
     for (auto& board : boards) {
         printf("Testing new board...\n");
+        AStarB::printBoard(board);
         
-        printf("Testing Heuristic 'Manhtattan':\n\n");
+        printf("\n\nTesting Heuristic 'Manhtattan':\n\n");
         test2(1, board, goal);
         
         printf("\n\nTesting Heuristic 'Euclidean':\n\n");

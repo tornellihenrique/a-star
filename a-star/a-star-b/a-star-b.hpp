@@ -74,17 +74,6 @@ struct Node {
                 for (int c = 0; c < SIZE; c++)
                     if (goal[r][c])
                         distance += abs(pR[goal[r][c]] - r) + abs(pC[goal[r][c]] - c);
-            
-//            for (int i=0; i<SIZE; i++) {
-//                for (int j=0; j<SIZE; j++) {
-//                    if (board[i][j] != 0) {
-//                        int x = (board[i][j] - 1) / SIZE;
-//                        int y = (board[i][j] - 1) % SIZE;
-//
-//                        distance += abs(x - i) + abs(y - j);
-//                    }
-//                }
-//            }
         } else if (type == 2) { // Euclidean
             
             int pR[(SIZE * SIZE) + 1];
@@ -100,17 +89,6 @@ struct Node {
                 for (int c = 0; c < SIZE; c++)
                     if (goal[r][c])
                         distance += sqrt(pow(pR[goal[r][c]] - r, 2) + pow(pC[goal[r][c]] - c, 2));
-            
-//            for (int i=0; i<SIZE; i++) {
-//                for (int j=0; j<SIZE; j++) {
-//                    if (board[i][j] != 0) {
-//                        int x = (board[i][j] - 1) / SIZE;
-//                        int y = (board[i][j] - 1) % SIZE;
-//
-//                        distance += sqrt((pow(x - i, 2)) + (pow(y - j, 2)));
-//                    }
-//                }
-//            }
         } else if (type == 3) { // Hamming
             for (int i = 0; i < SIZE; i++)
                 for (int j = 0; j < SIZE; j++)
@@ -211,7 +189,8 @@ public:
     static string boardToString(int** b);
     
     // Utility for printing boards
-    void printBoard(int** b) const;
+    static void printBoard(int** b);
+    static void printBoard(int b[SIZE][SIZE]);
 };
 
 #endif /* a_star_b_hpp */
