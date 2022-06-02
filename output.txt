@@ -1,0 +1,901 @@
+Testing new board...
+Testing Heuristic 'Manhtattan':
+
+Move: -
+g(n): 0
+h(n): 9
+f(n): 9
+Node open count: 0
+1 8 2 
+0 4 3 
+7 6 5 
+
+Move: L
+g(n): 1
+h(n): 8
+f(n): 9
+Node open count: 1
+1 8 2 
+4 0 3 
+7 6 5 
+
+Move: D
+g(n): 2
+h(n): 7
+f(n): 9
+Node open count: 6
+1 0 2 
+4 8 3 
+7 6 5 
+
+Move: L
+g(n): 3
+h(n): 6
+f(n): 9
+Node open count: 14
+1 2 0 
+4 8 3 
+7 6 5 
+
+Move: U
+g(n): 4
+h(n): 5
+f(n): 9
+Node open count: 17
+1 2 3 
+4 8 0 
+7 6 5 
+
+Move: U
+g(n): 5
+h(n): 4
+f(n): 9
+Node open count: 20
+1 2 3 
+4 8 5 
+7 6 0 
+
+Move: R
+g(n): 6
+h(n): 3
+f(n): 9
+Node open count: 21
+1 2 3 
+4 8 5 
+7 0 6 
+
+Move: D
+g(n): 7
+h(n): 2
+f(n): 9
+Node open count: 25
+1 2 3 
+4 0 5 
+7 8 6 
+
+Move: L
+g(n): 8
+h(n): 1
+f(n): 9
+Node open count: 27
+1 2 3 
+4 5 0 
+7 8 6 
+
+Move: U
+g(n): 9
+h(n): 0
+f(n): 9
+Node open count: 32
+1 2 3 
+4 5 6 
+7 8 0 
+
+
+Total number of steps: 10
+Time taken: 0.000000
+
+
+Testing Heuristic 'Euclidean':
+
+Move: -
+g(n): 0
+h(n): 7
+f(n): 7
+Node open count: 0
+1 8 2 
+0 4 3 
+7 6 5 
+
+Move: L
+g(n): 1
+h(n): 6
+f(n): 7
+Node open count: 1
+1 8 2 
+4 0 3 
+7 6 5 
+
+Move: D
+g(n): 2
+h(n): 5
+f(n): 7
+Node open count: 6
+1 0 2 
+4 8 3 
+7 6 5 
+
+Move: L
+g(n): 3
+h(n): 4
+f(n): 7
+Node open count: 9
+1 2 0 
+4 8 3 
+7 6 5 
+
+Move: U
+g(n): 4
+h(n): 3
+f(n): 7
+Node open count: 12
+1 2 3 
+4 8 0 
+7 6 5 
+
+Move: U
+g(n): 5
+h(n): 3
+f(n): 8
+Node open count: 15
+1 2 3 
+4 8 5 
+7 6 0 
+
+Move: R
+g(n): 6
+h(n): 3
+f(n): 9
+Node open count: 16
+1 2 3 
+4 8 5 
+7 0 6 
+
+Move: D
+g(n): 7
+h(n): 2
+f(n): 9
+Node open count: 39
+1 2 3 
+4 0 5 
+7 8 6 
+
+Move: L
+g(n): 8
+h(n): 1
+f(n): 9
+Node open count: 41
+1 2 3 
+4 5 0 
+7 8 6 
+
+Move: U
+g(n): 9
+h(n): 0
+f(n): 9
+Node open count: 46
+1 2 3 
+4 5 6 
+7 8 0 
+
+
+Total number of steps: 10
+Time taken: 0.000000
+
+
+Testing Heuristic 'Hamming':
+
+Move: -
+g(n): 0
+h(n): 6
+f(n): 6
+Node open count: 0
+1 8 2 
+0 4 3 
+7 6 5 
+
+Move: L
+g(n): 1
+h(n): 5
+f(n): 6
+Node open count: 1
+1 8 2 
+4 0 3 
+7 6 5 
+
+Move: D
+g(n): 2
+h(n): 5
+f(n): 7
+Node open count: 6
+1 0 2 
+4 8 3 
+7 6 5 
+
+Move: L
+g(n): 3
+h(n): 4
+f(n): 7
+Node open count: 12
+1 2 0 
+4 8 3 
+7 6 5 
+
+Move: U
+g(n): 4
+h(n): 3
+f(n): 7
+Node open count: 15
+1 2 3 
+4 8 0 
+7 6 5 
+
+Move: U
+g(n): 5
+h(n): 3
+f(n): 8
+Node open count: 18
+1 2 3 
+4 8 5 
+7 6 0 
+
+Move: R
+g(n): 6
+h(n): 3
+f(n): 9
+Node open count: 26
+1 2 3 
+4 8 5 
+7 0 6 
+
+Move: D
+g(n): 7
+h(n): 2
+f(n): 9
+Node open count: 64
+1 2 3 
+4 0 5 
+7 8 6 
+
+Move: L
+g(n): 8
+h(n): 1
+f(n): 9
+Node open count: 66
+1 2 3 
+4 5 0 
+7 8 6 
+
+Move: U
+g(n): 9
+h(n): 0
+f(n): 9
+Node open count: 71
+1 2 3 
+4 5 6 
+7 8 0 
+
+
+Total number of steps: 10
+Time taken: 0.000000
+=======================================
+
+Testing new board...
+Testing Heuristic 'Manhtattan':
+
+Move: -
+g(n): 0
+h(n): 14
+f(n): 14
+Node open count: 0
+7 2 4 
+5 0 6 
+8 3 1 
+
+Move: U
+g(n): 1
+h(n): 13
+f(n): 14
+Node open count: 4
+7 2 4 
+5 3 6 
+8 0 1 
+
+Move: L
+g(n): 2
+h(n): 12
+f(n): 14
+Node open count: 6
+7 2 4 
+5 3 6 
+8 1 0 
+
+Move: D
+g(n): 3
+h(n): 13
+f(n): 16
+Node open count: 9
+7 2 4 
+5 3 0 
+8 1 6 
+
+Move: R
+g(n): 4
+h(n): 12
+f(n): 16
+Node open count: 29
+7 2 4 
+5 0 3 
+8 1 6 
+
+Move: R
+g(n): 5
+h(n): 11
+f(n): 16
+Node open count: 34
+7 2 4 
+0 5 3 
+8 1 6 
+
+Move: D
+g(n): 6
+h(n): 10
+f(n): 16
+Node open count: 44
+0 2 4 
+7 5 3 
+8 1 6 
+
+Move: L
+g(n): 7
+h(n): 11
+f(n): 18
+Node open count: 46
+2 0 4 
+7 5 3 
+8 1 6 
+
+Move: L
+g(n): 8
+h(n): 10
+f(n): 18
+Node open count: 100
+2 4 0 
+7 5 3 
+8 1 6 
+
+Move: U
+g(n): 9
+h(n): 9
+f(n): 18
+Node open count: 103
+2 4 3 
+7 5 0 
+8 1 6 
+
+Move: R
+g(n): 10
+h(n): 10
+f(n): 20
+Node open count: 104
+2 4 3 
+7 0 5 
+8 1 6 
+
+Move: U
+g(n): 11
+h(n): 9
+f(n): 20
+Node open count: 557
+2 4 3 
+7 1 5 
+8 0 6 
+
+Move: R
+g(n): 12
+h(n): 8
+f(n): 20
+Node open count: 558
+2 4 3 
+7 1 5 
+0 8 6 
+
+Move: D
+g(n): 13
+h(n): 7
+f(n): 20
+Node open count: 634
+2 4 3 
+0 1 5 
+7 8 6 
+
+Move: L
+g(n): 14
+h(n): 6
+f(n): 20
+Node open count: 635
+2 4 3 
+1 0 5 
+7 8 6 
+
+Move: D
+g(n): 15
+h(n): 5
+f(n): 20
+Node open count: 642
+2 0 3 
+1 4 5 
+7 8 6 
+
+Move: R
+g(n): 16
+h(n): 4
+f(n): 20
+Node open count: 682
+0 2 3 
+1 4 5 
+7 8 6 
+
+Move: U
+g(n): 17
+h(n): 3
+f(n): 20
+Node open count: 733
+1 2 3 
+0 4 5 
+7 8 6 
+
+Move: L
+g(n): 18
+h(n): 2
+f(n): 20
+Node open count: 734
+1 2 3 
+4 0 5 
+7 8 6 
+
+Move: L
+g(n): 19
+h(n): 1
+f(n): 20
+Node open count: 740
+1 2 3 
+4 5 0 
+7 8 6 
+
+Move: U
+g(n): 20
+h(n): 0
+f(n): 20
+Node open count: 745
+1 2 3 
+4 5 6 
+7 8 0 
+
+
+Total number of steps: 21
+Time taken: 0.000000
+
+
+Testing Heuristic 'Euclidean':
+
+Move: -
+g(n): 0
+h(n): 10
+f(n): 10
+Node open count: 0
+7 2 4 
+5 0 6 
+8 3 1 
+
+Move: U
+g(n): 1
+h(n): 9
+f(n): 10
+Node open count: 4
+7 2 4 
+5 3 6 
+8 0 1 
+
+Move: L
+g(n): 2
+h(n): 9
+f(n): 11
+Node open count: 6
+7 2 4 
+5 3 6 
+8 1 0 
+
+Move: D
+g(n): 3
+h(n): 10
+f(n): 13
+Node open count: 23
+7 2 4 
+5 3 0 
+8 1 6 
+
+Move: R
+g(n): 4
+h(n): 10
+f(n): 14
+Node open count: 48
+7 2 4 
+5 0 3 
+8 1 6 
+
+Move: R
+g(n): 5
+h(n): 9
+f(n): 14
+Node open count: 66
+7 2 4 
+0 5 3 
+8 1 6 
+
+Move: D
+g(n): 6
+h(n): 8
+f(n): 14
+Node open count: 76
+0 2 4 
+7 5 3 
+8 1 6 
+
+Move: L
+g(n): 7
+h(n): 9
+f(n): 16
+Node open count: 78
+2 0 4 
+7 5 3 
+8 1 6 
+
+Move: L
+g(n): 8
+h(n): 8
+f(n): 16
+Node open count: 217
+2 4 0 
+7 5 3 
+8 1 6 
+
+Move: U
+g(n): 9
+h(n): 7
+f(n): 16
+Node open count: 222
+2 4 3 
+7 5 0 
+8 1 6 
+
+Move: R
+g(n): 10
+h(n): 8
+f(n): 18
+Node open count: 223
+2 4 3 
+7 0 5 
+8 1 6 
+
+Move: U
+g(n): 11
+h(n): 7
+f(n): 18
+Node open count: 964
+2 4 3 
+7 1 5 
+8 0 6 
+
+Move: R
+g(n): 12
+h(n): 6
+f(n): 18
+Node open count: 965
+2 4 3 
+7 1 5 
+0 8 6 
+
+Move: D
+g(n): 13
+h(n): 5
+f(n): 18
+Node open count: 981
+2 4 3 
+0 1 5 
+7 8 6 
+
+Move: L
+g(n): 14
+h(n): 5
+f(n): 19
+Node open count: 982
+2 4 3 
+1 0 5 
+7 8 6 
+
+Move: D
+g(n): 15
+h(n): 5
+f(n): 20
+Node open count: 1323
+2 0 3 
+1 4 5 
+7 8 6 
+
+Move: R
+g(n): 16
+h(n): 4
+f(n): 20
+Node open count: 1899
+0 2 3 
+1 4 5 
+7 8 6 
+
+Move: U
+g(n): 17
+h(n): 3
+f(n): 20
+Node open count: 2350
+1 2 3 
+0 4 5 
+7 8 6 
+
+Move: L
+g(n): 18
+h(n): 2
+f(n): 20
+Node open count: 2351
+1 2 3 
+4 0 5 
+7 8 6 
+
+Move: L
+g(n): 19
+h(n): 1
+f(n): 20
+Node open count: 2599
+1 2 3 
+4 5 0 
+7 8 6 
+
+Move: U
+g(n): 20
+h(n): 0
+f(n): 20
+Node open count: 2775
+1 2 3 
+4 5 6 
+7 8 0 
+
+
+Total number of steps: 21
+Time taken: 0.000000
+
+
+Testing Heuristic 'Hamming':
+
+Move: -
+g(n): 0
+h(n): 6
+f(n): 6
+Node open count: 0
+7 2 4 
+5 0 6 
+8 3 1 
+
+Move: U
+g(n): 1
+h(n): 6
+f(n): 7
+Node open count: 4
+7 2 4 
+5 3 6 
+8 0 1 
+
+Move: L
+g(n): 2
+h(n): 6
+f(n): 8
+Node open count: 13
+7 2 4 
+5 3 6 
+8 1 0 
+
+Move: D
+g(n): 3
+h(n): 7
+f(n): 10
+Node open count: 21
+7 2 4 
+5 3 0 
+8 1 6 
+
+Move: R
+g(n): 4
+h(n): 7
+f(n): 11
+Node open count: 64
+7 2 4 
+5 0 3 
+8 1 6 
+
+Move: R
+g(n): 5
+h(n): 6
+f(n): 11
+Node open count: 69
+7 2 4 
+0 5 3 
+8 1 6 
+
+Move: D
+g(n): 6
+h(n): 6
+f(n): 12
+Node open count: 74
+0 2 4 
+7 5 3 
+8 1 6 
+
+Move: L
+g(n): 7
+h(n): 7
+f(n): 14
+Node open count: 179
+2 0 4 
+7 5 3 
+8 1 6 
+
+Move: L
+g(n): 8
+h(n): 7
+f(n): 15
+Node open count: 332
+2 4 0 
+7 5 3 
+8 1 6 
+
+Move: U
+g(n): 9
+h(n): 6
+f(n): 15
+Node open count: 647
+2 4 3 
+7 5 0 
+8 1 6 
+
+Move: R
+g(n): 10
+h(n): 7
+f(n): 17
+Node open count: 648
+2 4 3 
+7 0 5 
+8 1 6 
+
+Move: U
+g(n): 11
+h(n): 7
+f(n): 18
+Node open count: 1513
+2 4 3 
+7 1 5 
+8 0 6 
+
+Move: R
+g(n): 12
+h(n): 6
+f(n): 18
+Node open count: 2682
+2 4 3 
+7 1 5 
+0 8 6 
+
+Move: D
+g(n): 13
+h(n): 5
+f(n): 18
+Node open count: 3316
+2 4 3 
+0 1 5 
+7 8 6 
+
+Move: L
+g(n): 14
+h(n): 5
+f(n): 19
+Node open count: 3317
+2 4 3 
+1 0 5 
+7 8 6 
+
+Move: D
+g(n): 15
+h(n): 5
+f(n): 20
+Node open count: 4667
+2 0 3 
+1 4 5 
+7 8 6 
+
+Move: R
+g(n): 16
+h(n): 4
+f(n): 20
+Node open count: 7474
+0 2 3 
+1 4 5 
+7 8 6 
+
+Move: U
+g(n): 17
+h(n): 3
+f(n): 20
+Node open count: 8870
+1 2 3 
+0 4 5 
+7 8 6 
+
+Move: L
+g(n): 18
+h(n): 2
+f(n): 20
+Node open count: 8871
+1 2 3 
+4 0 5 
+7 8 6 
+
+Move: L
+g(n): 19
+h(n): 1
+f(n): 20
+Node open count: 9735
+1 2 3 
+4 5 0 
+7 8 6 
+
+Move: U
+g(n): 20
+h(n): 0
+f(n): 20
+Node open count: 9803
+1 2 3 
+4 5 6 
+7 8 0 
+
+
+Total number of steps: 21
+Time taken: 1.000000
+=======================================
+
+Testing new board...
+Testing Heuristic 'Manhtattan':
+
+Puzzle not solvable...
+Time taken: 238.000000
+
+
+Testing Heuristic 'Euclidean':
+
+Puzzle not solvable...
+Time taken: 921.000000
+
+
+Testing Heuristic 'Hamming':
+
+Puzzle not solvable...
+Time taken: 233.000000
+=======================================
+
+Program ended with exit code: 0

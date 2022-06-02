@@ -14,12 +14,14 @@
 #include <vector>
 #include <array>
 #include <algorithm>
+#include <string>
+#include <cmath>
 #include <stdlib.h>
 
 using namespace std;
 
 #define SIZE 3
-#define MAX 30
+#define MAX 181440
 
 // Shortcut for move. Each move represent a state of the puzzle
 typedef pair<int**, char> Move;
@@ -30,30 +32,89 @@ typedef pair<char, pair<int, int> > Direction;
 // Struct definition for a Node
 struct Node {
     int** board;
+    int** goal;
     
     Node* parent;
     int g;
     
     Move action;
     
+    int type; // type = 1 for "Manhattan", type = 2 for "Euclidean" and type 3 for "Hamming"
+    int n; // Node open count
+    
     Node() {}
     
-    Node(int** targetBoard, Node* targetParent, Move targetAction) : board(targetBoard), parent(targetParent), g(targetParent != nullptr ? targetParent->g + 1 : 0), action(targetAction) {}
+    Node(int** targetBoard, int** targetGoal, Node* targetParent, Move targetAction, int targetType, int targetN) :
+        board(targetBoard),
+        goal(targetGoal),
+        parent(targetParent),
+        g(targetParent != nullptr ? targetParent->g + 1 : 0),
+        action(targetAction),
+        type(targetType),
+        n(targetN)
+    {}
     
-    // Calculate h using "Manhattan" heuristic
+    // Calculate h using target heuristic
     int h() const
     {
         int distance = 0;
         
-        for (int i=0; i<SIZE; i++) {
-            for (int j=0; j<SIZE; j++) {
-                if (board[i][j] != 0) {
-                    int x = (board[i][j] - 1) / SIZE;
-                    int y = (board[i][j] - 1) % SIZE;
-                    
-                    distance += abs(x - i) + abs(y - j);
+        if (type == 1) { // Manhattan
+            
+            int pR[(SIZE * SIZE) + 1];
+            int pC[(SIZE * SIZE) + 1];
+            
+            for (int r = 0; r < SIZE; r++) {
+                for (int c = 0; c < SIZE; c++) {
+                    pR[board[r][c]] = r;
+                    pC[board[r][c]] = c;
                 }
             }
+            for (int r = 0; r < SIZE; r++)
+                for (int c = 0; c < SIZE; c++)
+                    if (goal[r][c])
+                        distance += abs(pR[goal[r][c]] - r) + abs(pC[goal[r][c]] - c);
+            
+//            for (int i=0; i<SIZE; i++) {
+//                for (int j=0; j<SIZE; j++) {
+//                    if (board[i][j] != 0) {
+//                        int x = (board[i][j] - 1) / SIZE;
+//                        int y = (board[i][j] - 1) % SIZE;
+//
+//                        distance += abs(x - i) + abs(y - j);
+//                    }
+//                }
+//            }
+        } else if (type == 2) { // Euclidean
+            
+            int pR[(SIZE * SIZE) + 1];
+            int pC[(SIZE * SIZE) + 1];
+            
+            for (int r = 0; r < SIZE; r++) {
+                for (int c = 0; c < SIZE; c++) {
+                    pR[board[r][c]] = r;
+                    pC[board[r][c]] = c;
+                }
+            }
+            for (int r = 0; r < SIZE; r++)
+                for (int c = 0; c < SIZE; c++)
+                    if (goal[r][c])
+                        distance += sqrt(pow(pR[goal[r][c]] - r, 2) + pow(pC[goal[r][c]] - c, 2));
+            
+//            for (int i=0; i<SIZE; i++) {
+//                for (int j=0; j<SIZE; j++) {
+//                    if (board[i][j] != 0) {
+//                        int x = (board[i][j] - 1) / SIZE;
+//                        int y = (board[i][j] - 1) % SIZE;
+//
+//                        distance += sqrt((pow(x - i, 2)) + (pow(y - j, 2)));
+//                    }
+//                }
+//            }
+        } else if (type == 3) { // Hamming
+            for (int i = 0; i < SIZE; i++)
+                for (int j = 0; j < SIZE; j++)
+                    if (board[i][j] && board[i][j] != goal[i][j]) distance++;
         }
         
         return distance;
@@ -131,23 +192,23 @@ struct Node {
 class AStarB {
 public:
     int** board;
+    int** goal;
     
     // Dummy Constructor
     AStarB() {}
     
     // Constructor. It receives the target board as parameter
-    AStarB(int targetBoard[][SIZE]);
+    AStarB(int targetBoard[SIZE][SIZE], int targetGoal[SIZE][SIZE]);
     
-    // Solves the puzzle using A* Search Algorithm
-    vector<Node*> solve();
+    // Solves the puzzle using A* Search Algorithm with some Heuristic type (1 for "Manhattan" or 2 for "Euclidean")
+    vector<Node*> solve(int type);
     
     bool isSolved(int** b) const;
     bool isSolvable(int b[SIZE][SIZE]) const;
     int getInvCount(int arr[]) const;
     
-    bool compareBoards(int** a, int** b) const;
-    bool compareSeenBoards(set<int**> seen, int** b) const;
     static bool compareNodes(const Node* a, const Node* b);
+    static string boardToString(int** b);
     
     // Utility for printing boards
     void printBoard(int** b) const;
