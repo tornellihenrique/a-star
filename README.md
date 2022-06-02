@@ -88,7 +88,7 @@ If at some point the current Node is the solution, it returns the full path of t
 
 ## Tests
 
-Now, some detailed tests using 2 solvable Puzzles and 1 unsolvable Puzzle for each Heuristic. Read `test.txt` for the full output.
+Now, some detailed tests using 2 solvable Puzzles and 1 unsolvable Puzzle for each Heuristic. Read `output.txt` for the full output.
 
 ### First Board:
 ```
