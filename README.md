@@ -18,10 +18,10 @@ From there, it's possible to use A* Algorithm for searching the best path for so
 
 ## Getting Started
 
-Importing the header `a-star-b.hpp` you can use the code in your own `main` only by doing the following:
+Importing the header `game.h` you can use the code in your own `main` only by doing the following:
 ```cpp
 
-#include "a-star-b.hpp"
+#include "game.h"
 
 using namespace std;
 
@@ -29,11 +29,11 @@ int main() {
   int goal[SIZE][SIZE]    = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 0 } };
   int initial[SIZE][SIZE] = { { 1, 8, 2 }, { 0, 4, 3 }, { 7, 6, 5 } };
   
-  AStarB aStarB(board, goal);
+  Game game(Game::generateBoard(board), Game::generateBoard(goal));
   
-  vector<Node*> path1 = aStarB.solve(1); // Solves using "Manhattan" Heuristic
-  vector<Node*> path2 = aStarB.solve(2); // Solves using "Euclidean" Heuristic
-  vector<Node*> path3 = aStarB.solve(3); // Solves using "Hamming"   Heuristic
+  vector<Node*> path1 = game.solve(1); // Solves using "Manhattan" Heuristic
+  vector<Node*> path2 = game.solve(2); // Solves using "Euclidean" Heuristic
+  vector<Node*> path3 = game.solve(3); // Solves using "Hamming"   Heuristic
 }
 ```
 
@@ -42,31 +42,31 @@ As you can see, it's possible to solve the puzzle using 3 Heuristics: "Manhattan
 Here is an example for printing the Nodes after solving the puzzle:
 ```cpp
 int steps = 0;
+for (auto &node : path)
+{
+  cout << "Move: " << node->action.second << endl;
+  cout << "g(n)" << node->g << endl;
+  cout << "h(n)" << node->h() << endl;
+  cout << "f(n)" << node->f() << endl;
 
-for (auto& node : path) {
-    printf("Move: %c\n", node->action.second);
-    printf("g(n): %d\n", node->g);
-    printf("h(n): %d\n", node->h());
-    printf("f(n): %d\n", node->f());
-    printf("Node open count: %d\n", node->n);
+  Game::printBoard(node->board);
 
-    aStarB.printBoard(node->board);
+  cout << endl;
 
-    printf("\n");
-
-    steps++;
+  steps++;
 }
 
-printf("\nTotal number of steps: %d\n", steps);
+cout << endl
+    << "Total number of steps: " << steps << endl;
 ```
 
 ## The Code
 
 The source code was made using C++ for a better performance and use of object orientation.
 
-The class `AStarB` represents a 8 Puzzle. In the constructor you send the initial and goal state of the board. And using the method `solve(...)` it solves the problem using the chosen Heuristic. Also, there are some other utility methods, such as `isSolved(...)`, `isSolvable(...)`, `getInvCount(...)`, `compareNodes(...)`, `boardToString(...)` and `printBoard(...)`.
+The class `Game` represents a 8 Puzzle. In the constructor you send the initial and goal state of the board. And using the method `solve(...)` it solves the problem using the chosen Heuristic. Also, there are some other utility methods, such as `isSolved(...)`, `isSolvable(...)`, `getInvCount(...)`, `compareNodes(...)`, `boardToString(...)` and `printBoard(...)`.
 
-The `solve` method works using the `Node`, which is a struct inside the `a-star-b.hpp` header file. This struct works as follows:
+The `solve` method works using the `Node`, which is a class. It works as follows:
 1. A Node knows its `board` state and the `goal` one.
 2. A Node points to its `parent`.
 3. A Node has a `g`, which is its cost, how deep this Node is.
